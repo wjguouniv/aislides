@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI HVAC Performance Dashboard - Part 1</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .slide {
+            display: flex;
+            flex-direction: column;
+            height: 540px;
+            width: 960px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header {
+            flex-shrink: 0;
+            padding: 10px 20px;
+        }
+
+        .metrics-grid {
+            flex: 1;
+            display: flex;
+            gap: 20px;
+            padding: 0 20px;
+            margin-top: 10px;
+            margin-bottom: -30px;
+            height: 350px;
+        }
+
+        .metric-section {
+            flex: 1;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            height: 330px;
+        }
+
+        .metric-header {
+            margin-bottom: 2px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .metric-header h3 {
+            font-size: 12px;
+            margin: 0;
+        }
+        
+        .metric-value {
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .metric-trend {
+            font-size: 10px;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .metric-chart {
+            flex: 1;
+            margin-top: 8px;
+            min-height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .chart-placeholder {
+            font-size: 10px;
+            margin: 0;
+        }
+        
+        .info-section {
+            display: flex;
+            gap: 20px;
+            padding: 5px 20px;
+            margin-top: 0;
+            background: #f5f5f5;
+            height: 40px;
+        }
+        
+        .info-box {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-box h4 {
+            font-size: 12px;
+            margin: 0;
+            white-space: nowrap;
+        }
+        
+        .info-text {
+            font-size: 11px;
+            margin: 0;
+            line-height: 1.1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="header">
+            <div class="logo-container">
+                <img src="univers-logo.png" alt="Univers" class="logo">
+            </div>
+            <h1 class="title">AI HVAC System Performance Dashboard</h1>
+            <p class="subtitle">Real-time monitoring and optimization metrics</p>
+        </div>
+        
+        <div class="metrics-grid">
+            <div class="metric-section">
+                <div class="metric-header">
+                    <span class="metric-icon">🌡️</span>
+                    <h3 class="metric-title">Temperature Control</h3>
+                </div>
+                <div class="metric-value">98.5%</div>
+                <div class="metric-trend trend-up">↑ 2.3% from last month</div>
+                <div class="metric-chart">
+                    <p class="chart-placeholder">Temperature Variance Graph</p>
+                </div>
+            </div>
+            
+            <div class="metric-section">
+                <div class="metric-header">
+                    <span class="metric-icon">⚡</span>
+                    <h3 class="metric-title">Energy Efficiency</h3>
+                </div>
+                <div class="metric-value">32%</div>
+                <div class="metric-trend trend-up">↑ 5.7% energy savings</div>
+                <div class="metric-chart">
+                    <p class="chart-placeholder">Energy Consumption Graph</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="info-box">
+                <h4 class="info-title">AI-Driven Insights</h4>
+                <p class="info-text">System predicts optimal settings 24 hours in advance based on weather forecasts and historical patterns.</p>
+            </div>
+            <div class="info-box">
+                <h4 class="info-title">Carbon Footprint</h4>
+                <p class="info-text">28.5% reduction in CO2 emissions through intelligent optimization.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

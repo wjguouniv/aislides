@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Slide 2</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .flow-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            padding: 10px;
+            max-height: 350px;
+            position: relative;
+            margin-top: 10px;
+        }
+
+        .flow-level {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            width: 100%;
+            position: relative;
+        }
+
+        .flow-item {
+            background: white;
+            border-radius: 6px;
+            padding: 8px;
+            width: 160px;
+            text-align: center;
+            border: 2px solid #48426A;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Remove the previous connector styles */
+        .flow-item::before,
+        .flow-item::after,
+        .flow-level::before {
+            display: none;
+        }
+
+        /* Add direct connector lines */
+        .flow-connector {
+            position: absolute;
+            background-color: #48426A;
+            z-index: 1;
+        }
+
+        /* Vertical connectors */
+        .connector-vertical {
+            width: 2px;
+            height: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Diagonal connectors from first to second level */
+        .connector-diagonal-left {
+            width: 2px;
+            height: 30px;
+            transform: rotate(-45deg);
+            transform-origin: top left;
+            left: 50%;
+            top: 100%;
+        }
+
+        .connector-diagonal-right {
+            width: 2px;
+            height: 30px;
+            transform: rotate(45deg);
+            transform-origin: top right;
+            right: 50%;
+            top: 100%;
+        }
+
+        .flow-item-title {
+            font-weight: bold;
+            color: #48426A;
+            margin-bottom: 4px;
+            font-size: 12px;
+        }
+
+        .flow-item-content {
+            font-size: 10px;
+            color: #666;
+            margin-top: 3px;
+            line-height: 1.2;
+        }
+
+        .flow-icon {
+            font-size: 16px;
+            margin-bottom: 3px;
+        }
+
+        .header {
+            padding-bottom: 5px;
+        }
+
+        .header .title {
+            margin-bottom: 3px;
+            font-size: 20px;
+        }
+
+        .header .subtitle {
+            margin-bottom: 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="header">
+            <div class="logo-container">
+                <img src="univers-logo.png" alt="Univers Logo" class="logo">
+            </div>
+            <h1 class="title">AI HVAC Process Flow</h1>
+            <p class="subtitle">Intelligent Building Management System Process</p>
+        </div>
+        
+        <div class="content">
+            <div class="flow-container">
+                <!-- Level 1: Data Collection -->
+                <div class="flow-level">
+                    <div class="flow-item">
+                        <div class="flow-icon">📡</div>
+                        <div class="flow-item-title">Data Collection</div>
+                        <div class="flow-item-content">
+                            • Temperature Sensors<br>
+                            • Humidity Sensors<br>
+                            • Occupancy Data<br>
+                            • Weather API
+                        </div>
+                        <div class="flow-connector connector-diagonal-left"></div>
+                        <div class="flow-connector connector-diagonal-right"></div>
+                    </div>
+                </div>
+
+                <!-- Level 2: Processing & Decision Making -->
+                <div class="flow-level">
+                    <div class="flow-item">
+                        <div class="flow-icon">🔄</div>
+                        <div class="flow-item-title">AI Processing</div>
+                        <div class="flow-item-content">
+                            • Pattern Analysis<br>
+                            • Predictive Modeling<br>
+                            • Anomaly Detection
+                        </div>
+                        <div class="flow-connector connector-vertical" style="top: 100%;"></div>
+                    </div>
+                    <div class="flow-item">
+                        <div class="flow-icon">🧠</div>
+                        <div class="flow-item-title">Decision Making</div>
+                        <div class="flow-item-content">
+                            • Comfort Optimization<br>
+                            • Energy Efficiency<br>
+                            • Cost Analysis
+                        </div>
+                        <div class="flow-connector connector-vertical" style="top: 100%;"></div>
+                    </div>
+                </div>
+
+                <!-- Level 3: Control & Monitoring -->
+                <div class="flow-level">
+                    <div class="flow-item">
+                        <div class="flow-icon">⚙️</div>
+                        <div class="flow-item-title">System Control</div>
+                        <div class="flow-item-content">
+                            • Temperature Adjustment<br>
+                            • Airflow Management<br>
+                            • Schedule Optimization
+                        </div>
+                    </div>
+                    <div class="flow-item">
+                        <div class="flow-icon">📊</div>
+                        <div class="flow-item-title">Performance Monitoring</div>
+                        <div class="flow-item-content">
+                            • Real-time Analytics<br>
+                            • Efficiency Metrics<br>
+                            • System Health
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

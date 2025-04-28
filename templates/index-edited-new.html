@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-HVAC Report</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="presentation-container">
+        <iframe id="slide-frame" src="slide-1-edited-new.html" frameborder="0"></iframe>
+    </div>
+    
+    <div class="nav-buttons">
+        <button id="prev-button" class="nav-button" title="Previous" disabled>&#10094;</button>
+        <button id="next-button" class="nav-button" title="Next">&#10095;</button>
+    </div>
+    
+    <div class="slide-indicator">
+        <span id="slide-dots"></span>
+    </div>
+    
+    <button class="menu-toggle" id="menu-toggle">
+        &#9776;
+    </button>
+    
+    <div class="side-menu" id="side-menu">
+        <div class="menu-header">
+            <h1 class="menu-title">AI-HVAC Evolution</h1>
+            <p class="menu-subtitle">Revolutionary HVAC Optimization System</p>
+        </div>
+        <ul class="menu-list" id="slide-list">
+            <!-- Slide items will be added dynamically -->
+        </ul>
+    </div>
+    
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <script>
+        const slides = [
+            'slide-1-edited-new.html',
+            'slide-2-edited-new.html',
+            'slide-3-edited-new.html',
+            'slide-4-edited-new.html'
+        ];
+        
+        let currentSlideIndex = 0;
+        
+        const slideFrame = document.getElementById('slide-frame');
+        const prevButton = document.getElementById('prev-button');
+        const nextButton = document.getElementById('next-button');
+        const slideDots = document.getElementById('slide-dots');
+        const slideList = document.getElementById('slide-list');
+        const menuToggle = document.getElementById('menu-toggle');
+        const sideMenu = document.getElementById('side-menu');
+        const loading = document.getElementById('loading');
+        
+        function initSlides() {
+            slides.forEach((slide, index) => {
+                const dot = document.createElement('span');
+                dot.className = 'dot' + (index === currentSlideIndex ? ' active' : '');
+                dot.dataset.index = index;
+                dot.addEventListener('click', () => goToSlide(index));
+                slideDots.appendChild(dot);
+                
+                const menuItem = document.createElement('li');
+                menuItem.className = 'menu-item' + (index === currentSlideIndex ? ' active' : '');
+                menuItem.dataset.index = index;
+                menuItem.innerHTML = `
+                    <div class="menu-item-title">Slide ${index + 1}</div>
+                    <div class="menu-item-desc">${getSlideTitle(index)}</div>
+                `;
+                menuItem.addEventListener('click', () => {
+                    goToSlide(index);
+                    toggleMenu();
+                });
+                slideList.appendChild(menuItem);
+            });
+            
+            updateNavButtons();
+        }
+        
+        function getSlideTitle(index) {
+            const titles = [
+                'AI-HVAC Overview',
+                'System Architecture',
+                'P1 Requirements and Release Plan',
+                'P2 Requirements and Release Plan'
+            ];
+            return titles[index];
+        }
+        
+        function updateNavButtons() {
+            prevButton.disabled = currentSlideIndex === 0;
+            nextButton.disabled = currentSlideIndex === slides.length - 1;
+        }
+        
+        function updateDots() {
+            document.querySelectorAll('.dot').forEach((dot, index) => {
+                dot.className = 'dot' + (index === currentSlideIndex ? ' active' : '');
+            });
+        }
+        
+        function updateMenuItems() {
+            document.querySelectorAll('.menu-item').forEach((item, index) => {
+                item.className = 'menu-item' + (index === currentSlideIndex ? ' active' : '');
+            });
+        }
+        
+        function goToSlide(index) {
+            if (index < 0 || index >= slides.length) return;
+            
+            loading.style.display = 'flex';
+            loading.style.opacity = '1';
+            
+            currentSlideIndex = index;
+            slideFrame.src = slides[index];
+            
+            updateNavButtons();
+            updateDots();
+            updateMenuItems();
+        }
+        
+        function nextSlide() {
+            if (currentSlideIndex < slides.length - 1) {
+                goToSlide(currentSlideIndex + 1);
+            }
+        }
+        
+        function prevSlide() {
+            if (currentSlideIndex > 0) {
+                goToSlide(currentSlideIndex - 1);
+            }
+        }
+        
+        function toggleMenu() {
+            sideMenu.classList.toggle('open');
+        }
+        
+        function handleKeyNavigation(e) {
+            switch(e.key) {
+                case 'ArrowRight':
+                    nextSlide();
+                    break;
+                case 'ArrowLeft':
+                    prevSlide();
+                    break;
+                case 'Escape':
+                    if (sideMenu.classList.contains('open')) {
+                        toggleMenu();
+                    }
+                    break;
+            }
+        }
+        
+        slideFrame.onload = function() {
+            setTimeout(() => {
+                loading.style.opacity = '0';
+                setTimeout(() => {
+                    loading.style.display = 'none';
+                }, 500);
+            }, 500);
+        };
+        
+        prevButton.addEventListener('click', prevSlide);
+        nextButton.addEventListener('click', nextSlide);
+        menuToggle.addEventListener('click', toggleMenu);
+        document.addEventListener('keydown', handleKeyNavigation);
+        
+        initSlides();
+    </script>
+</body>
+</html> 
