@@ -602,6 +602,7 @@ body {
     padding: 20px;
     padding-top: 0;
     overflow: visible;
+    background: white;
 }
 
 /* Slide 2 header overrides */
@@ -609,6 +610,7 @@ body {
     margin-bottom: 13px;
     padding: 11px 22px;
     padding-bottom: 5px;
+    background: white;
 }
 
 .slide-content .logo-container {
@@ -623,6 +625,7 @@ body {
     font-size: 25px;
     margin-top: 5px;
     font-weight: 500;
+    color: #14142B;
 }
 
 /* Slide 2 arrow style */
@@ -2308,4 +2311,105 @@ iframe {
 .presales-slide .description {
     font-size: 16px;
     margin: 10px 0 20px 0;
+}
+
+/* P2 Features specific styles */
+.p2-features-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8em;
+    margin-top: 5px;
+}
+
+.p2-features-table th,
+.p2-features-table td {
+    border: 1px solid #ddd;
+    padding: 3px 5px;
+    text-align: left;
+}
+
+.p2-features-table th {
+    background-color: #2c3e50;
+    color: white;
+    font-weight: 500;
+    font-size: 0.85em;
+}
+
+.p2-features-table .col-component {
+    width: 12%;
+}
+
+.p2-features-table .col-modules {
+    width: 18%;
+}
+
+.p2-features-table .col-pain-points {
+    width: 50%;
+}
+
+.p2-features-table .col-release {
+    width: 20%;
+}
+
+.p2-features-table .component-group.integration td {
+    background-color: #e8f5e9;
+}
+
+.p2-features-table .component-group.bms td {
+    background-color: #e3f2fd;
+}
+
+.p2-features-table .component-group.expert td {
+    background-color: #fff3e0;
+}
+
+.p2-features-table .component-group.hvac td {
+    background-color: #f3e5f5;
+}
+
+.p2-features-table .component-group.ui td {
+    background-color: #e8eaf6;
+}
+
+.p2-features-table .component-group.foundation td {
+    background-color: #fbe9e7;
+}
+
+.p2-features-table .component-group td:first-child {
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.p2-features-table td:last-child {
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.p2-features-table sup {
+    font-size: 0.7em;
+}
+
+.p2-features-table tr:hover td {
+    filter: brightness(0.95);
+}
+
+.p2-features-table .col-pain-points {
+    color: white;
+    font-style: italic;
+    background-color: #2c3e50;
+}
+
+.p2-features-table td:nth-child(2) {
+    color: #2c3e50;
+}
+
+.p2-features-owner-badge {
+    background-color: #7B68EE;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    position: absolute;
+    top: 15px;
+    right: 20px;
 }
