@@ -2231,3 +2231,81 @@ iframe {
     color: #48426A;
     margin-top: 3px;
 }
+
+/* Pre-sales priorities table specific styles */
+.presales-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.presales-table th, 
+.presales-table td {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    vertical-align: top;
+}
+
+.presales-table th {
+    width: 15%;
+    text-align: left;
+}
+
+.presales-table td.timeline-header {
+    text-align: center;
+    width: 28%;
+}
+
+/* Purple background variations for first column */
+.presales-table tr:nth-child(1) th {
+    background-color: #48426A;
+    color: white;
+}
+
+.presales-table tr:nth-child(2) th {
+    background-color: #5C5686;
+    color: white;
+}
+
+.presales-table tr:nth-child(3) th {
+    background-color: #6E6AA1;
+    color: white;
+}
+
+.presales-table tr:nth-child(4) th {
+    background-color: #8683B0;
+    color: white;
+}
+
+.presales-table tr:nth-child(5) th {
+    background-color: #9E9BC0;
+    color: white;
+}
+
+.presales-table tr:nth-child(6) th {
+    background-color: #B6B3D1;
+    color: white;
+}
+
+/* Compact slide layout for pre-sales */
+.presales-slide.slide {
+    padding: 20px 40px;
+}
+
+.presales-slide .header {
+    margin-bottom: 20px;
+}
+
+.presales-slide .title {
+    font-size: 32px;
+    margin: 10px 0;
+}
+
+.presales-slide .subtitle {
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+.presales-slide .description {
+    font-size: 16px;
+    margin: 10px 0 20px 0;
+}
