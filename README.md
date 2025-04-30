@@ -20,6 +20,8 @@ The repository includes various HTML templates for different types of slides:
 - Project delivery status and risk assessment
 - etc.
 
+All templates are based on the presentation "AIHVAC_march2025_update" and maintain consistency with its design language and structure.
+
 ### Development Process
 The slides were created using Cursor AI, which generated new slide templates based on existing patterns while incorporating modern design principles and best practices. These slides demonstrate how AI can be used to create consistent, professional presentation materials.
 
@@ -35,7 +37,11 @@ The slides were created using Cursor AI, which generated new slide templates bas
 1. Clone the repository
 2. Open any HTML file in a web browser to view the slides
 3. Use the styles.css file as a reference for creating new slides
-4. Modify the templates to create custom presentations
+4. Create new templates using AI prompts or edit existing templates:
+   - Use AI prompts to generate new slide templates based on your requirements
+   - Modify existing templates to create custom presentations
+   - Maintain consistency with the "AIHVAC_march2025_update" design language
+5. All templates are self-contained and use the shared styles.css
 
 ## Design Principles
 - Consistent 960x540px slide dimensions
@@ -52,3 +58,5 @@ The slides were created using Cursor AI, which generated new slide templates bas
 - All slides are self-contained and use the shared styles.css
 - Images and logos should be placed in the same directory as the HTML files
 - The slides are designed to be viewed in a 16:9 aspect ratio
+- Templates are based on the "AIHVAC_march2025_update" presentation
+- Use AI prompts to generate new templates or modify existing ones
